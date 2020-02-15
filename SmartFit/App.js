@@ -4,8 +4,10 @@ import { NavigationContainer } from '@react-navigation/native';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import { Ionicons } from 'react-native-vector-icons';
 import { RNCamera } from 'react-native-camera';
+import Permissions from 'react-native-permissions';
 
 function CameraScreen() {
+
   return (
     <View style={styles.container}>
         <RNCamera
