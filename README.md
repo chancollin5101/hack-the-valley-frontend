@@ -27,6 +27,6 @@ Or, if you prefer Android:
 yarn andriod
 ```
 
-## Licens
+## License
 
 [Mozilla Public License 2.0](LICENSE)
