@@ -4,7 +4,9 @@ import { NavigationContainer } from '@react-navigation/native';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import { Ionicons } from 'react-native-vector-icons';
 import { RNCamera } from 'react-native-camera';
+import PieChart from 'react-native-pie-chart';
 import Permissions from 'react-native-permissions';
+import axios from 'axios';
 
 function CameraScreen() {
 
@@ -43,18 +45,31 @@ function CameraScreen() {
 }
 
 function AccountScreen() { 
+  const chart_wh = 250
+  const series = [123,323,455,234,342]
+  const sliceColor = ['#F44336','#2196F3','#FFEB3B', '#4CAF50', '#FF9800']
+
   return (
     <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center' }}>
       <Text>Account!</Text>
+      <PieChart
+            chart_wh={chart_wh}
+            series={series}
+            sliceColor={sliceColor}
+            doughnut={true}
+            coverRadius={0.45}
+            coverFill={'#FFF'}
+          />
     </View>
   );
 }
 
 function HomeScreen() {
   return (
-    <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center' }}>
-      <Text>Home!</Text>
-    </View>
+      <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center' }}>
+        <Text>Roses are</Text>
+        
+      </View>
   );
 }
 
@@ -63,8 +78,24 @@ takePicture = async() => {
       const options = { quality: 0.5, base64: true };
       const data = await this.camera.takePictureAsync(options);
       console.log(data.uri);
+      makePostRequest(data.uri);
     }
   };
+
+async function makePostRequest(uri) { 
+  axios.get('35.202.172.36:5000/api/picture-to-macros?')
+    then(function (response) {
+    // handle success
+    console.log(response);
+  })
+  .catch(function (error) {
+    // handle error
+    console.log(error);
+  })
+  .then(function () {
+    // always executed
+  });
+}
 
 const styles = StyleSheet.create({
   container: {

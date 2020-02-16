@@ -19,6 +19,7 @@ PODS:
     - DoubleConversion
     - glog
   - glog (0.3.5)
+  - libopencv-contrib (3.4.1)
   - RCTRequired (0.61.5)
   - RCTTypeSafety (0.61.5):
     - FBLazyVector (= 0.61.5)
@@ -231,6 +232,13 @@ PODS:
     - React
   - RNGestureHandler (1.6.0):
     - React
+  - RNOpencv3 (1.0.5):
+    - libopencv-contrib (~> 3.4.1)
+    - React
+    - RNOpencv3/CvCamera (= 1.0.5)
+  - RNOpencv3/CvCamera (1.0.5):
+    - libopencv-contrib (~> 3.4.1)
+    - React
   - RNPermissions (2.0.9):
     - React
   - RNReanimated (1.7.0):
@@ -273,6 +281,7 @@ DEPENDENCIES:
   - ReactCommon/turbomodule/core (from `../node_modules/react-native/ReactCommon`)
   - "RNCMaskedView (from `../node_modules/@react-native-community/masked-view`)"
   - RNGestureHandler (from `../node_modules/react-native-gesture-handler`)
+  - RNOpencv3 (from `../node_modules/react-native-opencv3/ios`)
   - RNPermissions (from `../node_modules/react-native-permissions`)
   - RNReanimated (from `../node_modules/react-native-reanimated`)
   - RNScreens (from `../node_modules/react-native-screens`)
@@ -282,6 +291,7 @@ DEPENDENCIES:
 SPEC REPOS:
   https://github.com/cocoapods/specs.git:
     - boost-for-react-native
+    - libopencv-contrib
 
 EXTERNAL SOURCES:
   DoubleConversion:
@@ -340,6 +350,8 @@ EXTERNAL SOURCES:
     :path: "../node_modules/@react-native-community/masked-view"
   RNGestureHandler:
     :path: "../node_modules/react-native-gesture-handler"
+  RNOpencv3:
+    :path: "../node_modules/react-native-opencv3/ios"
   RNPermissions:
     :path: "../node_modules/react-native-permissions"
   RNReanimated:
@@ -358,6 +370,7 @@ SPEC CHECKSUMS:
   FBReactNativeSpec: 118d0d177724c2d67f08a59136eb29ef5943ec75
   Folly: 30e7936e1c45c08d884aa59369ed951a8e68cf51
   glog: 1f3da668190260b06b429bb211bfbee5cd790c28
+  libopencv-contrib: 01e8f05daf0e93e3f5fa395590fcf41ef312bef3
   RCTRequired: b153add4da6e7dbc44aebf93f3cf4fcae392ddf1
   RCTTypeSafety: 9aa1b91d7f9310fc6eadc3cf95126ffe818af320
   React: b6a59ef847b2b40bb6e0180a97d0ca716969ac78
@@ -381,6 +394,7 @@ SPEC CHECKSUMS:
   ReactCommon: 198c7c8d3591f975e5431bec1b0b3b581aa1c5dd
   RNCMaskedView: a88953beefbd347a29072d9eba90e42945fe291e
   RNGestureHandler: dde546180bf24af0b5f737c8ad04b6f3fa51609a
+  RNOpencv3: 69fd83bb21ee01f5d5182b099a0b26610195d5df
   RNPermissions: 2f74237e97b08beda01e914301e12524ddddf5b8
   RNReanimated: 031fe8d9ea93c2bd689a40f05320ef9d96f74d7f
   RNScreens: 6053a007667bea81a69087caadf103bba04c032e
