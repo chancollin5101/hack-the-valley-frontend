@@ -4,12 +4,11 @@ import { NavigationContainer } from '@react-navigation/native';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import { Ionicons } from 'react-native-vector-icons';
 import { RNCamera } from 'react-native-camera';
-import PieChart from 'react-native-pie-chart';
 import Permissions from 'react-native-permissions';
 import axios from 'axios';
 
-function CameraScreen() {
 
+function CameraScreen() {
   return (
     <View style={styles.container}>
         <RNCamera
@@ -40,35 +39,26 @@ function CameraScreen() {
             <Text style={{ fontSize: 14 }}> Detect </Text>
           </TouchableOpacity>
         </View>
-      </View>
+    </View>
   );
 }
 
 function AccountScreen() { 
-  const chart_wh = 250
-  const series = [123,323,455,234,342]
-  const sliceColor = ['#F44336','#2196F3','#FFEB3B', '#4CAF50', '#FF9800']
-
   return (
     <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center' }}>
       <Text>Account!</Text>
-      <PieChart
-            chart_wh={chart_wh}
-            series={series}
-            sliceColor={sliceColor}
-            doughnut={true}
-            coverRadius={0.45}
-            coverFill={'#FFF'}
-          />
     </View>
   );
 }
 
 function HomeScreen() {
+  const chart_wh = 50
+  const series = [13,33,45,24,34]
+  const sliceColor = ['#F44326','#2196F3','#FFEB3B', '#4CAF50', '#FF9800']
+
   return (
       <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center' }}>
-        <Text>Roses are</Text>
-        
+        <Text>PieCHART!!!</Text>
       </View>
   );
 }
@@ -82,26 +72,29 @@ takePicture = async() => {
     }
   };
 
-async function makePostRequest(uri) { 
-  axios.get('35.202.172.36:5000/api/picture-to-macros?')
-    then(function (response) {
-    // handle success
-    console.log(response);
-  })
-  .catch(function (error) {
-    // handle error
-    console.log(error);
-  })
-  .then(function () {
-    // always executed
-  });
+function makePostRequest(uri) { 
+  fetch('http://35.202.172.36:5000/api/picture-to-macros?{uri}', {
+      method: 'GET',
+    })
+      .then(response => response.json())
+      .then(json => {
+        this.setState({
+          jsonData: json.body,
+        });
+      })
+      .catch(error => {
+        console.error(error);
+      });
 }
 
 const styles = StyleSheet.create({
-  container: {
+   container: {
     flex: 1,
-    flexDirection: 'column',
-    backgroundColor: 'black',
+    alignItems: 'center'
+  },
+  title: {
+    fontSize: 24,
+    margin: 10
   },
   preview: {
     flex: 1,
