@@ -1,6 +1,6 @@
 # 🚀 SmartFit 🥗
 
-A React Native dieting app that uses Machine Learning to identify the food and record users' macros.
+A React Native dieting app that uses Machine Learning to identify the food and record users' macros. This is only the frontend component of the app. The backend uses a [Machine Learning](https://github.com/David-Huynh/macro-counter-api) model we developed.  
 
 ## Getting Started
 
