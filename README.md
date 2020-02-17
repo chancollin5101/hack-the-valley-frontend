@@ -1,6 +1,6 @@
-# SmartFit 🚀
+# 🚀 SmartFit 🥗
 
-A React Native Dieting App that uses Machine Learning to record users' macros through their camera lenses. Check out live demo on [App Store](https://play.google.com/store/apps/details?id=com.reactnativestarter.lite), [Google Play](https://play.google.com/store/apps/details?id=com.reactnativestarter.app).
+A React Native dieting app that uses Machine Learning to identify the food and record users' macros.
 
 ## Getting Started
 
@@ -26,7 +26,3 @@ Or, if you prefer Android:
 ```
 yarn andriod
 ```
-
-## License
-
-[Mozilla Public License 2.0](LICENSE)
