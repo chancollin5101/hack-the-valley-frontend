@@ -1,9 +1,10 @@
 import React from 'react'; 
-import { View, StyleSheet } from 'react-native'; 
+import { View } from 'react-native'; 
 //pull in the ScrrenName 
 import ScreenName from '../components/ScreenName.js';
 import { Ionicons } from '@expo/vector-icons';
-import { ProgressCircle } from 'react-native-svg-charts';
+
+import textStyle from '../config/textStyle';
 
 const TabIcon1 = (props) => (
     <Ionicons
@@ -21,18 +22,9 @@ export default class ScreenOne extends React.Component {
 
     render() { 
         return (
-            <View style={styles.container}>
+            <View style={textStyle.titleContainer}>
                 <ScreenName name={'Home'}/>
-                <ProgressCircle style={{ height: 200 }} progress={0.7} progressColor={'rgb(134, 65, 244)'} />
             </View>
         );
     }
 }
-
-const styles = StyleSheet.create({
-    container: { 
-        flex: 1, 
-        alignItems: 'center',
-        justifyContent: 'center',
-    },
-});

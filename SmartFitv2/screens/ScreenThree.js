@@ -1,8 +1,10 @@
 import React from 'react'; 
 import { View, StyleSheet } from 'react-native'; 
 //pull in the ScrrenName 
-import ScreenName from '../components/ScreenName.js';
 import { Ionicons, MaterialCommunityIcons } from '@expo/vector-icons';
+
+import ScreenName from '../components/ScreenName.js';
+import textStyle from '../config/textStyle';
 
 const TabIcon3 = (props) => (
     <MaterialCommunityIcons
@@ -21,17 +23,9 @@ export default class ScreenThree extends React.Component {
 
     render() { 
         return (
-            <View style={styles.container}>
-                <ScreenName name={'Screen Three'}/>
+            <View style={textStyle.titleContainer}>
+                <ScreenName name={'Profile'}/>
             </View>
         );
     }
 }
-
-const styles = StyleSheet.create({
-    container: { 
-        flex: 1, 
-        alignItems: 'center',
-        justifyContent: 'center',
-    },
-});
